@@ -865,9 +865,10 @@ xz - 5.4.1-1
 xz-utils - 5.4.1-1
 zlib - 1.2.11-6
 zram-swap - 3
-routergo - 0.13.0
-luci-app-routerdog - 1.3.0
+routergo
+app-meta-routerdog
+luci-app-routerdog
 luci-nginx
 aria2
 luci-app-aria2
-app-meta-routerdog
+luci-i18n-aria2-zh-cn
