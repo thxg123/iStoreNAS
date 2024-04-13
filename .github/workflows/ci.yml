@@ -72,6 +72,7 @@ jobs:
           wget -O dl/${IB_NAME}.tar.xz ${IB_URL}${IB_NAME}.tar.xz
           wget -O dl/sha256sums ${IB_URL}sha256sums
           wget -O dl/${MF_NAME} ${IB_URL}${MF_NAME}
+          sed -i "/uhttpd.*/d" dl/${MF_NAME}
           echo "routergo - 0.13.0
           luci-app-routerdog - 1.3.0
           luci-nginx
@@ -85,7 +86,6 @@ jobs:
           grep -Fq ${IB_NAME}.tar.xz dl/sha256sums
           #cd dl && sha256sum -c --ignore-missing --status sha256sums
           cd dl
-          echo "打印${IB_URL}${MF_NAME}"
 
       - name: Unpack IB
         run: |
@@ -97,6 +97,7 @@ jobs:
           echo "CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_jp_tvbox=y
           CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_panther_x2=y
           CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_dg_nas=y" >> ib/.config
+          cat ib/.config
           # sed -i 's/6afc06598fa8e3bc907cff75f995f372df51d40a284e260de78a3421b1f18218/9b293ba9da352d39286cfd1d6bfa278c/g' ib/include/kernel-5.10
           cp -f rk3566-panther-x2.dtb ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/image-rk3566-panther-x2.dtb
           cp -f rk3566-jp-tvbox.dtb ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/image-rk3566-jp-tvbox.dtb
