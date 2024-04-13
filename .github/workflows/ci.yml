@@ -148,3 +148,9 @@ jobs:
         with:
           name: OpenWrt_ok${{ env.FILE_DATE }}
           path: build
+
+      - name: Upload2
+        uses: actions/upload-artifact@main
+        with:
+          name: OpenWrt_build${{ env.FILE_DATE }}
+          path: build/station-p2
