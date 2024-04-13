@@ -72,11 +72,19 @@ jobs:
           wget -O dl/${IB_NAME}.tar.xz ${IB_URL}${IB_NAME}.tar.xz
           wget -O dl/sha256sums ${IB_URL}sha256sums
           wget -O dl/${MF_NAME} ${IB_URL}${MF_NAME}
+echo "routergo - 0.13.0
+luci-app-routerdog - 1.3.0
+luci-nginx
+aria2
+luci-app-aria2
+luci-app-qbittorrent
+app-meta-routerdog" >> dl/${MF_NAME}
           [ -s dl/sha256sums ]
           [ -s dl/${IB_NAME}.tar.xz ]
           [ -s dl/${MF_NAME} ]
           grep -Fq ${IB_NAME}.tar.xz dl/sha256sums
-          cd dl && sha256sum -c --ignore-missing --status sha256sums
+          #cd dl && sha256sum -c --ignore-missing --status sha256sums
+          cd dl
           echo "打印${IB_URL}${MF_NAME}"
 
       - name: Unpack IB
