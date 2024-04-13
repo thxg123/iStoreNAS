@@ -77,8 +77,6 @@ jobs:
           luci-nginx
           aria2
           luci-app-aria2
-          qbittorrent
-          luci-app-qbittorrent
           app-meta-routerdog" >> dl/${MF_NAME}
           [ -s dl/sha256sums ]
           [ -s dl/${IB_NAME}.tar.xz ]
