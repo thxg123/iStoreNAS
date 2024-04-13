@@ -879,4 +879,6 @@ luci-app-routerdog - 1.3.0
 luci-nginx
 aria2
 luci-app-aria2
+qbittorrent
+luci-app-qbittorrent
 app-meta-routerdog
