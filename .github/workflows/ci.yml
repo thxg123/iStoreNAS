@@ -72,7 +72,7 @@ jobs:
           wget -O dl/${IB_NAME}.tar.xz ${IB_URL}${IB_NAME}.tar.xz
           wget -O dl/sha256sums ${IB_URL}sha256sums
           wget -O dl/${MF_NAME} ${IB_URL}${MF_NAME}
-          sed -i "/uhttpd.*/d" dl/${MF_NAME}
+          sed -i "/.*uhttpd.*/d" dl/${MF_NAME}
           echo "routergo
           app-meta-routerdog
           luci-app-routerdog
@@ -95,6 +95,7 @@ jobs:
           cp -a src/* ib/
           ls patches/ | sort | xargs -n1 sh -c 'patch -p1 -d ib -i ../patches/$0'
           sed -i 's/ unofficial/ xiaomeng9597/' ib/Makefile
+          sed -i "/.*uhttpd.*/d" ib/.config
           echo "CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_jp_tvbox=y
           CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_panther_x2=y
           CONFIG_TARGET_DEVICE_rockchip_rk35xx_DEVICE_dg_nas=y" >> ib/.config
