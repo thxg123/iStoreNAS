@@ -71,11 +71,15 @@ jobs:
           mkdir dl
           wget -O dl/${IB_NAME}.tar.xz ${IB_URL}${IB_NAME}.tar.xz
           wget -O dl/sha256sums ${IB_URL}sha256sums
+          #cp -f $GITHUB_WORKSPACE/src/target_rk35xx.manifest dl/target_rk35xx.manifest
+          #dl/istoreos-rockchip-rk35xx.manifest: No
+          
           [ -s dl/sha256sums ]
           [ -s dl/${IB_NAME}.tar.xz ]
           grep -Fq ${IB_NAME}.tar.xz dl/sha256sums
           cd dl && sha256sum -c --ignore-missing --status sha256sums
           wget -O dl/${MF_NAME} ${IB_URL}${MF_NAME}
+          echo ${IB_URL}${MF_NAME}
 
       - name: Unpack IB
         run: |
