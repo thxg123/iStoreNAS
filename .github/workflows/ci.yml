@@ -152,7 +152,7 @@ jobs:
           ls ../build/
           ls ../build/iStoreNAS/panther-x2
           ls ../build/iStoreNAS/jp-tvbox
-          
+
       - name: Compare manifest
         run: |
           cd ib
