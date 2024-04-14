@@ -871,3 +871,7 @@ routergo
 app-meta-routerdog
 luci-app-routerdog
 luci-nginx
+aria2
+luci-app-aria2
+luci-i18n-aria2-zh-cn
+app-meta-aria2
