@@ -82,7 +82,7 @@ jobs:
           luci-i18n-aria2-zh-cn
           app-meta-aria2" >> dl/${MF_NAME}
           cp -f dl/${MF_NAME} src/target_rk35xx.manifest
-          cat src/target_rk35xx.manifest
+          # cat src/target_rk35xx.manifest
           [ -s dl/sha256sums ]
           [ -s dl/${IB_NAME}.tar.xz ]
           [ -s dl/${MF_NAME} ]
