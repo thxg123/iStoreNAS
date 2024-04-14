@@ -843,6 +843,8 @@ ubus - 2022-06-01-2bebf93c-1
 ubusd - 2022-06-01-2bebf93c-1
 uci - 2021-10-22-f84f49f0-6
 uclient-fetch - 2023-04-13-007d9454-1
+uhttpd - 2023-06-25-34a8a74d-3
+uhttpd-mod-ubus - 2023-06-25-34a8a74d-3
 umbim - 2022-08-13-146bc77c-1
 unishare - 1.0.1-2
 unzip - 6.0-8
