@@ -133,12 +133,19 @@ jobs:
           echo "istoreos-intl - *" >> ib/target.manifest
           echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
           cd ib && make -f multi.mk image_multi FILES="files"
+          #storeos-rockchip-rk35xx-panther_x2-squashfs-sysupgrade.img.gz
+          #cp -fpR /home/runner/work/iStoreNAS/iStoreNAS/ib/bin/targets/rockchip/rk35xx/istoreos-rockchip-rk35xx-lyt_t68m-squashfs-sysupgrade.img.gz ../build/t68m/istoreos-22.03.6-2024041213-t68m-squashfs.img.gz
+          #cp /home/runner/work/iStoreNAS/iStoreNAS/ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/tmp/istoreos-rockchip-rk35xx-panther_x2-squashfs-sysupgrade.img.gz
+          ls /home/runner/work/iStoreNAS/iStoreNAS/ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/tmp/
+          ls /home/runner/work/iStoreNAS/iStoreNAS/ib/bin/targets/rockchip/rk35xx/
 
       - name: Pack
         run: |
           cd ib
           make -f release.mk IB=1
           make -f multi.mk release_env >> "$GITHUB_ENV"
+          ls /home/runner/work/iStoreNAS/iStoreNAS/ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/tmp/
+          ls /home/runner/work/iStoreNAS/iStoreNAS/ib/bin/targets/rockchip/rk35xx/
 
       - name: Compare manifest
         run: |
