@@ -110,7 +110,9 @@ jobs:
           cp -f configfiles/rk3566-panther-x2.dts ib/target/linux/rockchip/dts/rk3568/rk3566-panther-x2.dts
           cp -f configfiles/rk3566-jp-tvbox.dts ib/target/linux/rockchip/dts/rk3568/rk3566-jp-tvbox.dts
           cp -f configfiles/rk3566-panther-x2.dtb ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/image-rk3566-panther-x2.dtb
+          cp -f configfiles/panther_x2-kernel.bin ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/panther_x2-kernel.bin
           cp -f configfiles/rk3566-jp-tvbox.dtb ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/image-rk3566-jp-tvbox.dtb
+          cp -f configfiles/jp_tvbox-kernel.bin ib/build_dir/target-aarch64_cortex-a53_musl/linux-rockchip_rk35xx/jp_tvbox-kernel.bin
           
           VERSION_VALUE=$(grep -o 'REVISION:=[0-9]\+' ib/include/version.mk | cut -d'=' -f2)
           echo "VERSION_VALUE2=$VERSION_VALUE" >> $GITHUB_ENV
